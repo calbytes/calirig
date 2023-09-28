@@ -18,7 +18,7 @@ export default function Layout({children}) {
       <main>{children}</main>
 
       <footer className={styles.footer}>
-        Calirig - All rights reserved - Carlos Lara
+        www.calirig.net - All rights reserved - Carlos Lara
       </footer>
     </>
   );
