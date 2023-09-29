@@ -1,6 +1,6 @@
 {
   "name": "calirig",
-  "author": "Carlos Lara",
+  "author": "CAL",
   "license": "ISC",
   "version": "1.0.0",
   "scripts": {
@@ -12,9 +12,15 @@
   "dependencies": {
     "next": "^13.5.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.16.0"
   },
   "engines": {
     "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "20.7.1",
+    "@types/react": "18.2.23",
+    "typescript": "5.2.2"
   }
 }

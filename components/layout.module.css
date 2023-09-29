@@ -4,7 +4,7 @@
     margin: 3rem auto 6rem;
   }
   
-  .header {
+  .center {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,7 +19,7 @@
   .navbar {
     overflow: hidden;
     background-color: black;
-    position: fixed;
+    position: relative;
     top: 0; 
     width: 100%;
   }
@@ -40,6 +40,10 @@
 
   .navFixedRight{
     float: right;
+  }
+
+  .border {
+    border-style: solid;
   }
 
   .footer {
