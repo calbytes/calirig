@@ -2,15 +2,15 @@ import Head from 'next/head';
 import Layout from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
 
-export default function Home() {
+export default function Contact(): JSX.Element {
   return (
     <Layout>
       <Head>
-        <title>Calirig</title>
+        <title>Contact</title>
       </Head>
-
+      
       <section className={utilStyles.headingMd}>
-        <p>Welcome to CaliRig.net!!!!</p>
+        <p>Contact me!</p>
       </section>
     </Layout>
   );
