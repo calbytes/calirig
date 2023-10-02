@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import styles from './layout.module.css';
 import NavigationBar from './navigationbar';
+import Footer from './footer.component';
 
 
 interface LayoutProps {
@@ -24,9 +24,7 @@ export default function Layout({ title, children }: LayoutProps): JSX.Element {
 
       <main>{children}</main>
 
-      <footer className={styles.footer}>
-        www.calirig.net - All rights reserved - Carlos Lara
-      </footer>
+      <Footer />
     </>
   );
 }

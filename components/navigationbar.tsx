@@ -9,7 +9,6 @@ export default function NavigationBar() {
             <Link href="/contact">Contact</Link>
             
             <div className={styles.navFixedRight}>
-                <Link href="/signup">Sign Up</Link>
                 <Link href="/login">Login</Link>
             </div>
         </nav>
