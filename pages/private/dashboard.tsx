@@ -2,7 +2,7 @@ import Layout from "../../components/layout";
 
 export default function Dashboard() {
     return(
-        <Layout title="Dashboard test">
+        <Layout title="Dashboard test2">
             <h2>Dashboard!</h2>
         </Layout>
       );
