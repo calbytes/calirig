@@ -6,11 +6,7 @@ import utilStyles from '../components/layout.module.css';
 
 export default function Login(): JSX.Element {
     return(
-        <Layout>
-            <Head>
-                <title>Login</title>
-            </Head>
-
+        <Layout title="Login">
             <div className={styles.center}>
                 <h1 className={utilStyles.headingXl}>
                     Member Login

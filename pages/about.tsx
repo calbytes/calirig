@@ -6,11 +6,7 @@ import Image from 'next/image';
 
 export default function About(): JSX.Element {
     return (
-      <Layout>
-        <Head>
-          <title>About</title>
-        </Head>
-
+      <Layout title="About">
         <div className={styles.container}>
           <div className={styles.about}>
             <Image className={utilStyles.borderCircle}

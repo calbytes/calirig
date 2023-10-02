@@ -5,13 +5,15 @@ import NavigationBar from './navigationbar';
 
 
 interface LayoutProps {
+  title: string;
   children: React.ReactNode;
 }
 
-export default function Layout({ children }: LayoutProps): JSX.Element {
+export default function Layout({ title, children }: LayoutProps): JSX.Element {
   return (
     <>
       <Head>
+        <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="Calirig" content="Welcome to Calirig.net" />
       </Head>
