@@ -19,7 +19,8 @@ export default function About(): JSX.Element {
           <section className={utilStyles.headingMd}>
             <p>Hello, I'm Carlos. I'm a full stack software engineer with industry experience
               in security and R&D robotics. I'll be exhibiting some of my latest personal 
-              projects here on my site. Feel free to reach out if you have any questions or comments.
+              projects here on my site. Register an account to get access. Feel free to reach 
+              out if you have any questions or comments. 
             </p>
           </section>
         </div>
