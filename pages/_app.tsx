@@ -1,7 +1,13 @@
-import '../styles/global.css';
-import { AppProps } from 'next/app';
-import React, { useState } from 'react';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { CookiesProvider } from 'react-cookie';
 
-export default function App({ Component, pageProps }: AppProps): JSX.Element {
-  return <Component {...pageProps} />;
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}) {
+  return (
+    <CookiesProvider>
+      <Component {...pageProps} />
+    </CookiesProvider>
+  );
 }
