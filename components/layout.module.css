@@ -3,6 +3,13 @@
     padding: 0 1rem;
     margin: 3rem auto 6rem;
   }
+
+  .formContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+  }
   
   .center {
     display: flex;

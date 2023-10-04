@@ -1,30 +1,29 @@
 import React from 'react';
 import Head from 'next/head';
-import styles from './layout.module.css';
 import NavigationBar from './navigationbar';
-
+import Footer from './footer.component';
 
 interface LayoutProps {
+  title: string;
   children: React.ReactNode;
 }
 
-export default function Layout({ children }: LayoutProps): JSX.Element {
+export default function Layout({ title, children }: LayoutProps): JSX.Element {
   return (
     <>
       <Head>
+        <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="Calirig" content="Welcome to Calirig.net" />
+        <meta name="Calirig" content="www.calirig.net" />
       </Head>
 
       <header>
-        <NavigationBar />
+        <NavigationBar role=""/>
       </header>
 
       <main>{children}</main>
 
-      <footer className={styles.footer}>
-        www.calirig.net - All rights reserved - Carlos Lara
-      </footer>
+      <Footer />
     </>
   );
 }

@@ -1,14 +1,9 @@
-import Head from 'next/head';
 import Layout from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
 
 export default function Contact(): JSX.Element {
   return (
-    <Layout>
-      <Head>
-        <title>Contact</title>
-      </Head>
-      
+    <Layout title="Contact">
       <section className={utilStyles.headingMd}>
         <p>Contact me!</p>
       </section>
