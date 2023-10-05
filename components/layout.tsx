@@ -18,7 +18,7 @@ export default function Layout({ title, children }: LayoutProps): JSX.Element {
       </Head>
 
       <header>
-        <NavigationBar role=""/>
+        <NavigationBar role="admin"/>
       </header>
 
       <main>{children}</main>
