@@ -6,8 +6,8 @@ import { getCookie } from 'cookies-next';
 export default function Home({ username }): JSX.Element {
   return (
     <Layout title="Home">
-      <section className={utilStyles.headingMd}>
-        {username != null ? 
+      <div>
+        {username ? 
           <div className="d-flex justify-content-center align-items-center">
             <p>Hello, {username}!</p>
           </div>
@@ -16,8 +16,7 @@ export default function Home({ username }): JSX.Element {
             <p>To view more, login with your credentials.</p>
           </div>
         }
-        
-      </section>
+      </div>
     </Layout>
   );
 }
