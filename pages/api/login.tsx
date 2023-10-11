@@ -9,6 +9,7 @@ export default async function handler(req, res) {
     cookies.set('usr', username);
     cookies.set('pwd', password);
     cookies.set('role', "VIEWER");
+    
     res.redirect("/");
   }
 }
