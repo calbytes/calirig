@@ -9,11 +9,7 @@ export default function NavigationBar({ role }): JSX.Element {
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
             <Link href="/contact">Contact</Link>
-            {role == "admin" ?
-                <Link href="/private/dashboard">Dashboard</Link>
-            :
-                <></>
-            }
+            <Link href="/private/dashboard">Dashboard</Link>
             
             <div className={styles.navFixedRight}>
                 <Link href="/"> </Link>
