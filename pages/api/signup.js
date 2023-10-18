@@ -5,6 +5,7 @@ export default async function handler(req, res) {
     const email = req.body['email'];
     const username = req.body['username'];
     const cookies = new Cookies(req, res);
-    res.redirect("/");
+    cookies.set('role', "USER");
+    res.status(200).redirect("/");
   }
 }

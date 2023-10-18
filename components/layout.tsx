@@ -2,7 +2,6 @@ import React from 'react';
 import Head from 'next/head';
 import NavigationBar from './navigationbar';
 import Footer from './footer.component';
-import { getCookie } from 'cookies-next';
 
 interface LayoutProps {
   title: string;
