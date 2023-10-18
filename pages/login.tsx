@@ -1,14 +1,14 @@
 import React from 'react';
 import Layout from '../components/layout';
-import styles from '../components/layout.module.css'
 
 export default function Login(): JSX.Element {
     return(
         <Layout title="Login">
-            <div className={styles.formContainer}>
+            <div className="mt-3 d-flex justify-content-center flex-column align-items-center">
+                <div>
+                    <h3>Log In</h3>   
+                </div>
                 <form className="border p-3" action='/api/login' method='POST'>
-                    <h3>Member Login</h3><br />
-
                     <div className="form-group">
                         <input name="username" id="username" type="text" placeholder='username' required />
                     </div>

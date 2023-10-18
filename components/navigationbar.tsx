@@ -3,13 +3,12 @@ import Link from 'next/link';
 import { getCookie } from 'cookies-next';
 import React from 'react';
 
-export default function NavigationBar({ role }): JSX.Element {
+export default function NavigationBar(): JSX.Element {
     return(
         <nav className={styles.navbar}>
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
             <Link href="/contact">Contact</Link>
-            <Link href="/private/dashboard">Dashboard</Link>
             
             <div className={styles.navFixedRight}>
                 <Link href="/"> </Link>
@@ -19,15 +18,3 @@ export default function NavigationBar({ role }): JSX.Element {
         </nav>
     );
 }
-
-
-export async function getServerSideProps(context) {
-    const req = context.req
-    const res = context.res
-    var role = getCookie('role', { req, res });
-    if (role == undefined){
-        role = null;
-    }
-    
-    return { props: { role } };
-  };

@@ -1,13 +1,14 @@
 import Layout from '../components/layout';
-import utilStyles from '../styles/utils.module.css';
-import styles from '../components/layout.module.css';
-import React, { useState } from 'react';
+import React from 'react';
 
 export default function Contact(): JSX.Element {
   return (
     <Layout title="Contact">
-        <div className={styles.forContainer}>
-          <h1>Contact Me</h1>
+        <div className="mt-3 d-flex justify-content-center flex-column align-items-center">
+          <div>
+            <h3>Contact</h3>
+          </div>
+          <div>
           <form className="border p-3" action='/api/contact' method='POST'>
             <div className="form-group">
               <input name="name" id="name" type="text" placeholder='Name' required />
@@ -18,13 +19,14 @@ export default function Contact(): JSX.Element {
             </div>
             <br />
             <div className="form-group">
-              <input name="message" id="message" type="text" placeholder='Message' required />
+              <textarea name="message" id="message" placeholder='Message' maxLength={250} cols={30} rows={6} required />
             </div>
             <br />
-            <div>
-              <button type="submit">Submit</button>
+            <div className="text-center">
+              <button type="submit" className="btn btn-primary">Submit</button>
             </div>
           </form>
+          </div>
         </div>
     </Layout>
   );

@@ -1,20 +1,32 @@
 import Layout from '../components/layout';
-import utilStyles from '../styles/utils.module.css';
 import React from 'react';
 import { getCookie } from 'cookies-next';
+import Link from 'next/link';
 
-export default function Home({ username }): JSX.Element {
+export default function Home({ username, role }): JSX.Element {
   return (
     <Layout title="Home">
-      <div>
+      <div className="mt-3 d-flex justify-content-center flex-column align-items-center">
         {username ? 
-          <div className="d-flex justify-content-center align-items-center">
-            <p>Hello, {username}!</p>
+          <div >
+            <p>
+              Hello, {username}! Your access: {role}
+            </p>
           </div>
         :
-        <div className="d-flex justify-content-center align-items-center">
-            <p>To view more, login with your credentials.</p>
+        <div>
+            <p>
+              Hello, log in to access additional resources.
+            </p>
           </div>
+        }
+        {role === "ADMIN" ?
+        <div>
+          You have access to: <Link href="/private/dashboard">Dashboard</Link>
+        </div>
+          
+          :
+          <></>
         }
       </div>
     </Layout>
@@ -24,10 +36,13 @@ export default function Home({ username }): JSX.Element {
 export async function getServerSideProps(context) {
   const req = context.req
   const res = context.res
-  var username = getCookie('usr', { req, res });
-  if (username == undefined){
-      username = null;
-  }
-  
-  return { props: { username } };
+  var username = getCookie('username', { req, res });
+  var role = getCookie('role', { req, res });
+
+  return {
+    props: {
+      username: username || null,
+      role: role || null,
+    }
+  };
 };

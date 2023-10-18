@@ -3,7 +3,7 @@ import utilStyles from '../styles/utils.module.css';
 import styles from '../components/layout.module.css';
 import Image from 'next/image';
 
-export default function About({ cookie }): JSX.Element {
+export default function About(): JSX.Element {
   return (
     <Layout title="About">
       <div className={styles.container}>

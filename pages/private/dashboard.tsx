@@ -4,13 +4,13 @@ import { getCookie } from 'cookies-next';
 export default function Dashboard({ username, role }): JSX.Element  {
     return(
         <Layout title="Dashboard">
-            {role && username ? 
+            {role === "ADMIN" ? 
             <div className="d-flex justify-content-center align-items-center">
                 <p>Hello, {username}. Welcome to the Dashboard.</p>
             </div>
             :
             <div className="d-flex justify-content-center align-items-center">
-                <p>To view more, login with your credentials...</p>
+                <p>To view more, log in with your credentials...</p>
             </div>
             }
         </Layout>
