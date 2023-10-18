@@ -1,6 +1,5 @@
 import styles from './layout.module.css';
 import Link from 'next/link';
-import { getCookie } from 'cookies-next';
 import React from 'react';
 
 export default function NavigationBar(): JSX.Element {
