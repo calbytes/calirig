@@ -2,6 +2,7 @@ import Layout from '../components/layout';
 import React from 'react';
 import { getCookie } from 'cookies-next';
 import Link from 'next/link';
+import * as log4js from "log4js";
 
 export default function Home({ username, role }): JSX.Element {
   return (
@@ -34,10 +35,17 @@ export default function Home({ username, role }): JSX.Element {
 }
 
 export async function getServerSideProps(context) {
-  const req = context.req
-  const res = context.res
+  const logger = log4js.getLogger();
+  logger.level = "debug";
+
+  const req = context.req;
+  const res = context.res;
+
+  const ipaddr = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
   var username = getCookie('username', { req, res });
   var role = getCookie('role', { req, res });
+
+  logger.log("<INDEX> req.ipaddr: " + ipaddr);
 
   return {
     props: {
