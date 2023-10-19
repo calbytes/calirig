@@ -10,7 +10,7 @@ export default function Dashboard({ username, role }): JSX.Element  {
             </div>
             :
             <div className="d-flex justify-content-center align-items-center">
-                <p>To view more, log in with your credentials...</p>
+                <p>You do not have access to the Dashboard, silly willy ;-p</p>
             </div>
             }
         </Layout>
