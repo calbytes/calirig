@@ -15,7 +15,7 @@ export default function Layout({ title, children }: LayoutProps): JSX.Element {
         <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="Calirig" content="www.calirig.net" />
-        <meta name="description" content="CaliRig Projects" />
+        <meta name="description" content="www.calirig.net" />
       </Head>
 
       <header>

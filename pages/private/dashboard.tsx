@@ -1,5 +1,6 @@
 import Layout from "../../components/layout";
 import { getCookie } from 'cookies-next';
+import * as log4js from "log4js";
 
 export default function Dashboard({ username, role }): JSX.Element  {
     return(
@@ -10,7 +11,7 @@ export default function Dashboard({ username, role }): JSX.Element  {
             </div>
             :
             <div className="d-flex justify-content-center align-items-center">
-                <p>To view more, log in with your credentials...</p>
+                <p>You do not have access to the Dashboard, silly willy ;-p</p>
             </div>
             }
         </Layout>
@@ -18,10 +19,17 @@ export default function Dashboard({ username, role }): JSX.Element  {
 }
 
 export async function getServerSideProps(context) {
-    const req = context.req
-    const res = context.res
+    const logger = log4js.getLogger();
+    logger.level = "info";
+
+    const req = context.req;
+    const res = context.res;
+
     var username = getCookie('usr', { req, res });
-    var role = getCookie('role', { req, res })
+    var role = getCookie('role', { req, res });
+
+    const ipaddr = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+    logger.log("<INDEX> req.ipaddr: " + ipaddr);
 
     if (username == undefined){
         username = null;
