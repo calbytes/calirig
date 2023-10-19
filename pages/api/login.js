@@ -20,8 +20,10 @@ export default async function handler(req, res) {
       cookies.set('role', role);
     }
 
-    logger.log("<LOGIN> username: " + username + " | pwd: " + password + " | role: " + role);
-    
-    res.status(200).redirect("/");
+    const ipaddr = req.ipaddr;
+    logger.log("<LOGIN> ipaddr: " + ipaddr + " | username: " + username 
+      + " | pwd: " + password + " | role: " + role);
   }
+
+  res.status(200).redirect("/");
 }

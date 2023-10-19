@@ -36,7 +36,7 @@ export default function Home({ username, role }): JSX.Element {
 
 export async function getServerSideProps(context) {
   const logger = log4js.getLogger();
-  logger.level = "debug";
+  logger.level = "info";
 
   const req = context.req;
   const res = context.res;

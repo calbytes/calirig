@@ -9,8 +9,10 @@ export default async function handler(req, res) {
     const email = req.body['email'];
     const msg = req.body['message'];
     
-    logger.log("<CONTACT> name: " + name + " | email: " + email + " | msg: " + msg);
+    const ipaddr = req.ipaddr;
+    logger.log("<CONTACT> ipaddr: " + ipaddr + " | name: " + name 
+      + " | email: " + email + " | msg: " + msg);
   }
-  
+
   res.status(200).redirect("/");
 }
