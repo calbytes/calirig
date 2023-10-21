@@ -9,24 +9,24 @@ export default function Home({ username, role }): JSX.Element {
     <Layout title="Home">
       <div className="mt-3 d-flex justify-content-center flex-column align-items-center">
         {username ? 
-          <div >
-            <p>
+          <div>
+            <p className="lead mb-3">
               Hello, {username}! Your access: {role}
             </p>
           </div>
         :
-        <div>
-            <p>
+          <div>
+            <p className="lead mb-3">
               Hello, log in to access additional resources.
             </p>
           </div>
         }
+        
         {role === "ADMIN" ?
-        <div>
-          You have access to: <Link href="/private/dashboard">Dashboard</Link>
-        </div>
-          
-          :
+          <div className="lead mb-3">
+            You have access to: <Link href="/private/dashboard">Dashboard</Link>
+          </div>
+        :
           <></>
         }
       </div>

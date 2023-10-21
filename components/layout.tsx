@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import NavigationBar from './navigationbar';
-import Footer from './footer.component';
+import Footer from './footer';
 
 interface LayoutProps {
   title: string;
@@ -19,12 +19,12 @@ export default function Layout({ title, children }: LayoutProps): JSX.Element {
       </Head>
 
       <header>
-        <NavigationBar />
+        <NavigationBar/>
       </header>
 
       <main>{children}</main>
 
-      <Footer />
+      <Footer/>
     </div>
   );
 }
