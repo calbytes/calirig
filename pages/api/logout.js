@@ -5,13 +5,12 @@ export default async function handler(req, res) {
   const logger = log4js.getLogger();
   logger.level = "info";
 
-  logger.log("LOGGING OUT");
-
   if (req.method == "POST"){
     const cookies = new Cookies(req, res);
-    cookies.set('username');
-    cookies.set('role');
+    logger.log("Logging out user: " + cookies.get("username"));
+    cookies.set("username", null);
+    cookies.set("role", null);
   }
 
-  res.status(200);
+  res.status(200).redirect("/");
 }

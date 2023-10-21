@@ -12,10 +12,11 @@ export default function Login({ username }): JSX.Element {
           })
             .then(response => {
               if (!response.ok) {
-                throw new Error('Network response was not ok');
+                throw new Error('An error occurred for Log Out.');
               }
-              // Assuming you don't need a response from the server
+
               console.log('Logoff successful');
+              window.location.reload();
             })
             .catch(error => {
               console.error('Error:', error);
@@ -24,16 +25,16 @@ export default function Login({ username }): JSX.Element {
 
     return(
         <Layout title="Login">
-            <div className="mt-3 d-flex justify-content-center flex-column align-items-center">
+            <div>
                 {username ? 
-                    <div className="lead mb-3">
-                        <div>You are already logged in. Log off to end your session.</div>
+                    <div className="mt-3 d-flex justify-content-center flex-column align-items-center">
+                        <div>You are already logged in. Log out to end your session.</div>
                         <div className="d-flex justify-content-center">
                             <button onClick={logOut} className="btn btn-primary">Log Off</button>
                         </div>
                     </div>
                 :
-                    <div>
+                    <div className="mt-3 d-flex justify-content-center flex-column align-items-center">
                         <div>
                             <h3>Log In</h3>   
                         </div>
