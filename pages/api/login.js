@@ -20,7 +20,7 @@ export default async function handler(req, res) {
       cookies.set('role', role);
     }
 
-    const ipaddr = req.ipaddr;
+    const ipaddr = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
     logger.log("<LOGIN> ipaddr: " + ipaddr + " | username: " + username 
       + " | pwd: " + password + " | role: " + role);
   }
