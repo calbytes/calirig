@@ -25,18 +25,16 @@ export async function getServerSideProps(context) {
     const req = context.req;
     const res = context.res;
 
-    var username = getCookie('usr', { req, res });
+    var username = getCookie('username', { req, res });
     var role = getCookie('role', { req, res });
 
     const ipaddr = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
-    logger.log("<INDEX> req.ipaddr: " + ipaddr);
+    logger.log("<DASHBOARD> req.ipaddr: " + ipaddr);
 
-    if (username == undefined){
-        username = null;
-    }
-    if (role == undefined){
-        role = null;
-    }
-    
-    return { props: { username, role} };
+    return {
+        props: {
+          username: username || null,
+          role: role || null
+        }
+      };
   };
