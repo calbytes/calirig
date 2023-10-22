@@ -6,11 +6,11 @@ export default function Dashboard({ username, role }): JSX.Element  {
     return(
         <Layout title="Dashboard">
             {role === "ADMIN" ? 
-            <div className="d-flex justify-content-center align-items-center">
+            <div className="mt-3 d-flex justify-content-center flex-column align-items-center">
                 <p>Hello, {username}. Welcome to the Dashboard.</p>
             </div>
             :
-            <div className="d-flex justify-content-center align-items-center">
+            <div className="mt-3 d-flex justify-content-center flex-column align-items-center">
                 <p>You do not have access to the Dashboard, silly willy ;-p</p>
             </div>
             }
