@@ -15,14 +15,19 @@ export default function SignUp() {
         return true;
     }
 
+    const clearValues = () => {
+        const formElement = document.getElementById('signupForm') as HTMLFormElement;
+        formElement.reset();
+    }
+
 
     return(
         <Layout title="Sign Up">
             <div className="mt-3 d-flex justify-content-center flex-column align-items-center">
                 <div>
-                    <h3>Sign Up Form</h3>
+                    <h3>Sign Up</h3>
                 </div>
-                <form className="border p-3" onSubmit={checkPasswords} action='/api/signup' method='POST'>
+                <form id="signupForm" className="border p-3" onSubmit={checkPasswords} action='/api/signup' method='POST'>
                     <div className="form-group">
                         <input name="username" id="username" type="text" placeholder='Username' required />
                     </div>
@@ -40,8 +45,9 @@ export default function SignUp() {
                     </div>
                     <br />
 
-                    <div>
-                        <button type="submit">Submit</button>
+                    <div className="d-flex justify-content-center">
+                        <button className="btn btn-secondary mr-2 mx-auto" onClick={clearValues} type="button">Cancel</button>
+                        <button className="btn btn-primary mr-2 mx-auto" type="submit">Submit</button>
                     </div>
                 </form>
             </div>

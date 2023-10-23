@@ -23,6 +23,11 @@ export default function Login({ username }): JSX.Element {
             });
     }
 
+    const clearValues = () => {
+        const formElement = document.getElementById('loginForm') as HTMLFormElement;
+        formElement.reset();
+    }
+
     return(
         <Layout title="Login">
             <div>
@@ -38,17 +43,19 @@ export default function Login({ username }): JSX.Element {
                         <div>
                             <h3>Log In</h3>   
                         </div>
-                        <form className="border p-3" action='/api/login' method='POST'>
+                        <form id="loginForm" className="border p-3" action='/api/login' method='POST'>
                             <div className="form-group">
-                                <input name="username" id="username" type="text" placeholder='username' required />
+                                <input name="username" id="username" type="text" placeholder='Username' required />
                             </div>
                             <br />
                             <div className="form-group">
-                                <input name="password" id="password" type="password" placeholder='password' required />
+                                <input name="password" id="password" type="password" placeholder='Password' required />
                             </div>
                             <br />
-                            <div>
-                                <button type="submit">Login</button>
+
+                            <div className="d-flex justify-content-center">
+                                <button className="btn btn-secondary mr-2 mx-auto" onClick={clearValues} type="button">Cancel</button>
+                                <button className="btn btn-primary mr-2 mx-auto" type="submit">Submit</button>
                             </div>
                         </form>
                     </div>
