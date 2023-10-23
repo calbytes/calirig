@@ -3,6 +3,7 @@ import React from 'react';
 import { getCookie } from 'cookies-next';
 import Link from 'next/link';
 import * as log4js from "log4js";
+import DailyQuote from '../components/dailyQuote';
 
 export default function Home({ username, role }): JSX.Element {
   return (
@@ -29,6 +30,11 @@ export default function Home({ username, role }): JSX.Element {
         :
           <></>
         }
+
+        
+      </div>
+      <div className="d-flex justify-content-center align-items-center flex-column" style={{ height: '50vh' }}>
+          <DailyQuote/>
       </div>
     </Layout>
   );

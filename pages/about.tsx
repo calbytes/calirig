@@ -15,7 +15,7 @@ export default function About(): JSX.Element {
         </div>
 
         <p className="lead mb-3">
-          Hey y'all, I'm Carlos. I'm a full stack software engineer with industry experience 
+          Hey y'all, I'm Carlos. I'm a full stack software engineer with experience 
           in cybersecurity and R&D robotics/IoT devices. I'll be exhibiting some of my latest 
           projects here on my site. Register an account to get more access. Feel free to reach 
           out if you have any questions or comments.
