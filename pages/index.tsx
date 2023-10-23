@@ -18,7 +18,7 @@ export default function Home({ username, role }): JSX.Element {
         :
           <div>
             <p className="lead mb-3">
-              Hello, log in to access additional resources.
+              Sign in to access additional resources.
             </p>
           </div>
         }
