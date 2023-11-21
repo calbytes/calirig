@@ -17,9 +17,7 @@ export default function Home({ username, role, quote }): JSX.Element {
           </div>
         :
           <div>
-            <p className="lead mb-3">
-              Sign in to access additional resources.
-            </p>
+            <h3>welcome to calirig.net</h3>
           </div>
         }
         
@@ -51,7 +49,8 @@ export async function getServerSideProps(context) {
 
   logger.log("<INDEX> req.ipaddr: " + ipaddr);
 
-  const ip = '148.75.26.14'
+  //const ip = '148.75.26.14'
+  const ip = '192.168.1.45'
   const quoteURL = 'http://' + ip + '/quote'
   const response = await fetch(quoteURL);
   const quote = await response.json();
