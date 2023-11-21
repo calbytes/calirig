@@ -10,7 +10,6 @@ export default async function handler(req, res) {
     const password = req.body['password'];
 
     const cookies = new Cookies(req, res);
-
     cookies.set('username', username);
     const role = "USER";
 
