@@ -17,7 +17,7 @@ export default function Home({ username, role, quote }): JSX.Element {
           </div>
         :
           <div>
-            <h3>welcome to calirig.net</h3>
+            <h3>CaliRig</h3>
           </div>
         }
         
@@ -29,9 +29,10 @@ export default function Home({ username, role, quote }): JSX.Element {
           <></>
         }
       </div>
-      <div className="container d-flex align-items-center" style={{ height: '60vh', maxWidth: '600px' }}>
-          <Quote quoteData={quote}/>
+      <div>
+        <Quote quoteData={quote}/>
       </div>
+
     </Layout>
   );
 }

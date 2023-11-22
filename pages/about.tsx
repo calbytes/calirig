@@ -7,29 +7,27 @@ export default function About(): JSX.Element {
     <Layout title="About">
       <div className="container mx-auto my-5 px-4" style={{ maxWidth: '36rem' }}>
         <div className="d-flex flex-column align-items-center">
-          <Image className="rounded-circle"
-            src="/images/rig.jpg"
+          <Image className="rounded-circle border"
+            src="/images/cat.jpg"
             width={254} height={254}
             priority alt="pic of moi!"/>
 
           <div>
+            <br/>
             <h3>About</h3>
           </div>
         </div>
 
         <p className="lead mb-3">
-          hey y'all, welcome to calirig.net; the place where you can find what you need :) i'll be
-          showcasing my latest projects which involved some sort of tinkering with open source, 
-          hardware, inf0$ec, etc. <br/>
-          
-          <Link href="/signup">Register</Link> an account to get access to more resources 8-P ... 
-          <Link href="/contact"> Contact</Link> me if you have any questions or comments. this site is built 
-          and maintained by a team of angry kittens and they need your m0ney! don't hesitate to make a 
-          donation to the kitty fund ^_^ <br/>
+          Hey y'all, welcome to calirig.net; a repository of ideas, resources, services, etc...  
+          Signup/Login to get more access. Contact me if you have any questions or comments. <br/>
+          This platform is operated by a posse of evil kittens who are easily triggered ^_^ Donate 
+          generously to avoid a catastrophy 
+          ~ <Link href="https://paypal.me/calnyc" className="text-decoration-none" target="_blank" rel="noreferrer" 
+            style={{color:"green"}}>xoxo</Link><br/>
         </p>
-        <div className="float-end">
-        -CAL
-        </div>
+        <p>-CAL</p>
+
       </div>
     </Layout>
   );
