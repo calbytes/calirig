@@ -21,10 +21,10 @@ export default function About(): JSX.Element {
         <p className="lead mb-3">
           Hey y'all, welcome to calirig.net; a repository of ideas, resources, services, etc...  
           Signup/Login to get more access. Contact me if you have any questions or comments. <br/>
-          This platform is operated by a posse of evil kittens who are easily triggered ^_^ Donate 
-          generously to avoid a catastrophy 
-          ~ <Link href="https://paypal.me/calnyc" className="text-decoration-none" target="_blank" rel="noreferrer" 
-            style={{color:"green"}}>xoxo</Link><br/>
+          This platform is operated by a posse of evil kittens who are easily triggered ^_^ 
+          <Link href="https://paypal.me/calnyc" target="_blank" rel="noreferrer" 
+            style={{color:"green"}}>Donate</Link> generously to avoid a catastrophy 
+          ~ xoxo
         </p>
         <p>-CAL</p>
 
