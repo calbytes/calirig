@@ -9,7 +9,7 @@ export default function Quote({quoteData}): JSX.Element {
   ));
 
   return(
-    <div className="container d-flex justify-content-center mt-5 border flex-column" 
+    <div className="container d-flex justify-content-center mt-5 mb-5 border flex-column" 
     style={{maxWidth: '600px'}}>
       <p className="text-center fw-bold">
         Quote_Maestro
