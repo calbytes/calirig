@@ -9,7 +9,7 @@ export default async function handler(req, res) {
     const email = req.body['email'];
     const msg = req.body['message'];
     
-    const ipaddr = req.ipaddr;
+    const ipaddr = req.headers['x-forwarded-for'] || req.socket.remoteAddress;    
     logger.log("<CONTACT> ipaddr: " + ipaddr + " | name: " + name 
       + " | email: " + email + " | msg: " + msg);
   }

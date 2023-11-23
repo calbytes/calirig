@@ -3,9 +3,9 @@ import React from 'react';
 import { getCookie } from 'cookies-next';
 import Link from 'next/link';
 import * as log4js from "log4js";
-import DailyQuote from '../components/dailyQuote';
+import Quote from '../components/quote';
 
-export default function Home({ username, role }): JSX.Element {
+export default function Home({ username, role, quote }): JSX.Element {
   return (
     <Layout title="Home">
       <div className="mt-3 d-flex justify-content-center flex-column align-items-center">
@@ -17,9 +17,7 @@ export default function Home({ username, role }): JSX.Element {
           </div>
         :
           <div>
-            <p className="lead mb-3">
-              Sign in to access additional resources.
-            </p>
+            <h3>CaliRig</h3>
           </div>
         }
         
@@ -30,12 +28,11 @@ export default function Home({ username, role }): JSX.Element {
         :
           <></>
         }
+      </div>
+      <div>
+        <Quote quoteData={quote}/>
+      </div>
 
-        
-      </div>
-      <div className="d-flex justify-content-center align-items-center flex-column" style={{ height: '50vh' }}>
-          <DailyQuote/>
-      </div>
     </Layout>
   );
 }
@@ -53,10 +50,16 @@ export async function getServerSideProps(context) {
 
   logger.log("<INDEX> req.ipaddr: " + ipaddr);
 
+  const ip = '148.75.26.14'
+  const quoteURL = 'http://' + ip + '/quote'
+  const response = await fetch(quoteURL);
+  const quote = await response.json();
+
   return {
     props: {
       username: username || null,
       role: role || null,
+      quote: quote || null,
     }
   };
 };
