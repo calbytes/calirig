@@ -15,12 +15,12 @@ export default async function handler(req, res) {
       name: name, 
       email: email, 
       message: msg, 
-      ip: ipaddr};
-    logger.log(userData);
+      ip: ipaddr
+    };
 
     try {
       const response = await axios.post("/contact", userData);
-      //res.status(response.status).json(response.data);d
+      //res.status(response.status).json(response.data);
       res.status(200).redirect("/contact");
     } catch (error) {
       logger.error('Error forwarding form data:', error);
