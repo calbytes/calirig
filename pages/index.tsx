@@ -50,8 +50,8 @@ export async function getServerSideProps(context) {
 
   logger.log("<INDEX> req.ipaddr: " + ipaddr);
 
-  const ip = '148.75.26.14'
-  const quoteURL = 'http://' + ip + '/quote'
+  const baseURL = process.env.DB_SERVER_URL;
+  const quoteURL = baseURL + '/quote';
   const response = await fetch(quoteURL);
   const quote = await response.json();
 
