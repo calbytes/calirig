@@ -53,8 +53,7 @@ export async function getServerSideProps(context) {
 
   var quote = ''
   try{
-    const response = await axios.get("/test");  
-    console.log(response.data)
+    const response = await axios.get("/quote");  
     quote = response.data;
   } catch (error){
     logger.error(error);
