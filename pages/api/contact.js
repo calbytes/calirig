@@ -9,8 +9,7 @@ export default async function handler(req, res) {
     const name = req.body['name'];
     const email = req.body['email'];
     const msg = req.body['message'];
-    const ipaddr = req.headers['x-forwarded-for'] || 
-                    req.socket.remoteAddress;    
+    const ipaddr = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
 
     const userData = {
       name: name, 
