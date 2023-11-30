@@ -4,6 +4,7 @@ import { getCookie } from 'cookies-next';
 import Link from 'next/link';
 import * as log4js from "log4js";
 import Quote from '../components/quote';
+import axios from '../utils/axios'
 
 export default function Home({ username, role, quote }): JSX.Element {
   return (
@@ -50,10 +51,15 @@ export async function getServerSideProps(context) {
 
   logger.log("<INDEX> req.ipaddr: " + ipaddr);
 
-  const baseURL = process.env.DB_SERVER_URL;
-  const quoteURL = baseURL + '/quote';
-  const response = await fetch(quoteURL);
-  const quote = await response.json();
+  var quote = ''
+  try{
+    const response = await axios.get("/test");  
+    console.log(response.data)
+    quote = response.data;
+  } catch (error){
+    logger.error(error);
+  }  
+
 
   return {
     props: {

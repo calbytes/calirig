@@ -1,12 +1,24 @@
 import React from 'react';
 
 export default function Quote({quoteData}): JSX.Element {
-  const rawQuote = quoteData.quote;
-  const formattedQuote = rawQuote.split('\n').map((line, index) => (
-    <React.Fragment key={index}>
-      {line} <br />
-    </React.Fragment>
-  ));
+  var formattedQuote = '';
+  var author = '';
+  var title = '';
+  try{
+    formattedQuote = quoteData.quote.split('\n').map((line, index) => (
+      <React.Fragment key={index}>
+        {line} <br />
+      </React.Fragment>
+    ));
+    author = quoteData.author;
+    title = quoteData.title;
+  }catch(error){
+    console.log('Error processing Quote component:', error);
+    formattedQuote = 'Having something is not always better than not having it.'
+    author = "Beth Kempton";
+    title = "fr0m the WwW";
+  }
+
 
   return(
     <div className="container d-flex justify-content-center mt-5 mb-5 border flex-column" 
@@ -15,7 +27,7 @@ export default function Quote({quoteData}): JSX.Element {
         Quote_Maestro
       </p>
       <p>{formattedQuote}</p>
-      <p>- {quoteData.author}, {quoteData.title}</p>
+      <p>- {author}, {title}</p>
     </div>
     );
 }
