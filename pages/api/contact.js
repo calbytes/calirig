@@ -20,8 +20,8 @@ export default async function handler(req, res) {
 
     try {          
       const response = await axios.post("/contact", userData); 
-      //res.status(response.status).json(response.data);
-      res.status(200).redirect("/contact");
+      logger.info('POST /contact response status: ' + response.status);
+      res.status(200).redirect("/");
     } catch (error) {
       logger.error('Error processing form:', error);
       res.status(500).json({ error: 'Internal Server Error' });

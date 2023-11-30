@@ -51,6 +51,7 @@ export async function getServerSideProps(context) {
 
   logger.log("<INDEX> req.ipaddr: " + ipaddr);
 
+  //quote = '' invokes the fallback predefined quote
   var quote = ''
   try{
     const response = await axios.get("/quote");  
