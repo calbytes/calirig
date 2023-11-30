@@ -28,14 +28,12 @@ export default async function handler(req, res) {
 
     try {
       const response = await axios.post("/signup", userData);
-      //res.status(response.status).json(response.data);
-      res.status(200).redirect("/signup");
+      logger.info('POST /signup response status: ' + response.status);
+      res.status(200).redirect("/");
     } catch (error) {
       logger.error('Error forwarding form data:', error);
       res.status(500).json({ error: 'Internal Server Error' });
     }
-
+    
   }
-
-  res.status(200).redirect("/");
 }

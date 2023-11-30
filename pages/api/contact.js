@@ -26,5 +26,6 @@ export default async function handler(req, res) {
       logger.error('Error processing form:', error);
       res.status(500).json({ error: 'Internal Server Error' });
     }
+    
   }
 }
