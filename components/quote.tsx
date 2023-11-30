@@ -13,7 +13,6 @@ export default function Quote({quoteData}): JSX.Element {
     author = quoteData.author;
     title = quoteData.title;
   }catch(error){
-    console.log('Error processing Quote component:', error);
     formattedQuote = 'Having something is not always better than not having it.'
     author = "Beth Kempton";
     title = "fr0m the WwW";

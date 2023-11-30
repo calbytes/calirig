@@ -52,20 +52,19 @@ export async function getServerSideProps(context) {
   logger.log("<INDEX> req.ipaddr: " + ipaddr);
 
   //quote = '' invokes the fallback predefined quote
-  var quote = ''
+  var jsonQuote = ''
   try{
     const response = await axios.get("/quote");  
-    quote = response.data;
+    jsonQuote = response.data;
   } catch (error){
-    logger.error(error);
+    logger.error('There was an error processing Quote_Maestro. Fallback to Default Quote.');
   }  
-
 
   return {
     props: {
       username: username || null,
       role: role || null,
-      quote: quote || null,
+      quote: jsonQuote || null,
     }
   };
 };
