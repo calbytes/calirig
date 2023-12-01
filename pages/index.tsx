@@ -51,6 +51,18 @@ export async function getServerSideProps(context) {
 
   logger.log("<INDEX> req.ipaddr: " + ipaddr);
 
+  const data = {
+    ip: ipaddr
+  };
+
+  try {          
+    const response = await axios.post("/indexIP", data); 
+    logger.info('POST /indexIP response status: ' + response.status);
+  } catch (error) {
+    logger.error(error)
+    logger.error('An error occurred while processing /indexIP');
+  }
+
   //quote = '' invokes the fallback predefined quote
   var jsonQuote = ''
   try{
