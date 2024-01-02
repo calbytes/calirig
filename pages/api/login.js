@@ -11,18 +11,8 @@ export default async function handler(req, res) {
     const password = req.body['password'];
     const ipaddr = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
 
-    const cookies = new Cookies(req, res);
-    cookies.set('username', username);
-    const role = "USER";
-
-    if(username === "admin" && password === "passw0rd!!!"){
-      cookies.set('role', "ADMIN");
-    }else{
-      cookies.set('role', role);
-    }
-
-    logger.log("<LOGIN> ipaddr: " + ipaddr + " | username: " + username 
-      + " | pwd: " + password + " | role: " + role);
+    logger.info("<LOGIN> ipaddr: " + ipaddr + " | username: " + username 
+      + " | pwd: " + password + " | ip : " + ipaddr);
 
     const userData = {
       username: username, 
@@ -32,13 +22,16 @@ export default async function handler(req, res) {
 
     try {
       const response = await axios.post("/cnetLogin", userData);
-      //res.status(response.status).json(response.data);
-      res.status(200).redirect("/signup");
+      const role = response.data.role;
+      const cookies = new Cookies(req, res);
+      cookies.set('role', role);
+      cookies.set('username', username);
+      logger.info("user <" + username + "> has been authenticated.");
+      res.status(200).redirect("/login");
     } catch (error) {
-      logger.error('Error forwarding form data:', error);
-      res.status(500).json({ error: 'Internal Server Error' });
+      logger.error('There was an error authenticating user credentials');
+      res.status(400).redirect("/login");
     }
   }
 
-  res.status(200).redirect("/");
 }

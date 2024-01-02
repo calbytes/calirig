@@ -4,6 +4,7 @@ import { getCookie } from 'cookies-next';
 import Link from 'next/link';
 import * as log4js from "log4js";
 import Quote from '../components/quote';
+import axios from '../utils/axios'
 
 export default function Home({ username, role, quote }): JSX.Element {
   return (
@@ -50,16 +51,32 @@ export async function getServerSideProps(context) {
 
   logger.log("<INDEX> req.ipaddr: " + ipaddr);
 
-  const baseURL = process.env.DB_SERVER_URL;
-  const quoteURL = baseURL + '/quote';
-  const response = await fetch(quoteURL);
-  const quote = await response.json();
+  const data = {
+    ip: ipaddr
+  };
+
+  try {          
+    const response = await axios.post("/indexIP", data); 
+    logger.info('POST /indexIP response status: ' + response.status);
+  } catch (error) {
+    logger.error(error)
+    logger.error('An error occurred while processing /indexIP');
+  }
+
+  //quote = '' invokes the fallback predefined quote
+  var jsonQuote = ''
+  try{
+    const response = await axios.get("/quote");  
+    jsonQuote = response.data;
+  } catch (error){
+    logger.error('There was an error processing Quote_Maestro. Fallback to Default Quote.');
+  }  
 
   return {
     props: {
       username: username || null,
       role: role || null,
-      quote: quote || null,
+      quote: jsonQuote || null,
     }
   };
 };

@@ -9,7 +9,7 @@ export default async function handler(req, res) {
     const name = req.body['name'];
     const email = req.body['email'];
     const msg = req.body['message'];
-    const ipaddr = req.headers['x-forwarded-for'] || req.socket.remoteAddress;    
+    const ipaddr = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
 
     const userData = {
       name: name, 
@@ -18,13 +18,14 @@ export default async function handler(req, res) {
       ip: ipaddr
     };
 
-    try {
-      const response = await axios.post("/contact", userData);
-      //res.status(response.status).json(response.data);
-      res.status(200).redirect("/contact");
+    try {          
+      const response = await axios.post("/contact", userData); 
+      logger.info('POST /contact response status: ' + response.status);
+      res.status(200).redirect("/");
     } catch (error) {
-      logger.error('Error forwarding form data:', error);
+      logger.error('Error processing form:', error);
       res.status(500).json({ error: 'Internal Server Error' });
     }
+    
   }
 }

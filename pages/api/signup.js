@@ -12,10 +12,6 @@ export default async function handler(req, res) {
     const password = req.body['password'];
     const ipaddr = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
 
-    const cookies = new Cookies(req, res);
-    cookies.set('role', "USER");
-    cookies.set('username', username);
-
     logger.log("<SIGNUP> ipaddr: " + ipaddr + " | username: " + username
       + " | email: " + email + " | pwd: " + password);
 
@@ -28,14 +24,12 @@ export default async function handler(req, res) {
 
     try {
       const response = await axios.post("/signup", userData);
-      //res.status(response.status).json(response.data);
-      res.status(200).redirect("/signup");
+      logger.info('POST /signup response status: ' + response.status);
+      res.status(200).redirect("/login");
     } catch (error) {
       logger.error('Error forwarding form data:', error);
       res.status(500).json({ error: 'Internal Server Error' });
     }
 
   }
-
-  res.status(200).redirect("/");
 }
