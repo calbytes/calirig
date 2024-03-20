@@ -13,23 +13,19 @@ export default function About(): JSX.Element {
 
           <div>
             <br/>
-            <h3>Welcome to CaliRig</h3>
+            <h3>CaliRig</h3>
           </div>
         </div>
 
         <p className="lead mb-3">
           hey hi hello,
           <br/>
-          i'm hosting a CTF on this site. feel free to tinker, but please, don't get messy. this is for educational purposes only and all activity is logged. 
-          <br/><br/>
-          clue 1) the key will look like this (it's dynamically generated): <b>&lt;CTF_your_hashed_ip&gt;&lt;256_char_key/&gt;</b>
-          <br/><br/>
-          clue 2) gingerbread cookies are on the table
-          <br/><br/>
-          have fun ^_^
+          i'm Carlos, a software engineer in NYC. i previously worked in an in-house cybersecurity org building access controls (I&AM) 
+          & I also designed and developed manufacturing solutions w IoT devices in the early stages of a startup.
+          <br/>
+          Shoot me a msg to get access to my GitHub repos or to get a copy of my resume. 
         </p>
-        <p>-CAL</p>
-
+        
       </div>
     </Layout>
   );
