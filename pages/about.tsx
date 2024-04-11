@@ -1,6 +1,5 @@
 import Layout from '../components/layout';
 import Image from 'next/image';
-import Link from 'next/link';
 
 export default function About(): JSX.Element {
   return (
@@ -14,20 +13,19 @@ export default function About(): JSX.Element {
 
           <div>
             <br/>
-            <h3>About</h3>
+            <h3>CaliRig</h3>
           </div>
         </div>
 
         <p className="lead mb-3">
-          Hey y'all, welcome to calirig.net; a repository of ideas, resources, services, etc...  
-          Signup/Login to get more access. Contact me if you have any questions or comments. <br/>
-          This platform is operated by a posse of evil kittens who are easily triggered ^_^ 
-          <Link href="https://paypal.me/calnyc" target="_blank" rel="noreferrer" 
-            style={{color:"green"}}>Donate</Link> generously to avoid a catastrophy 
-          ~ xoxo
+          hey hi hello,
+          <br/>
+          i'm Carlos, a software engineer in NYC. i previously worked in an in-house cybersecurity org building access controls (I&AM) 
+          & I also designed and developed manufacturing solutions w IoT devices in the early stages of a startup.
+          <br/>
+          Shoot me a msg to get access to my GitHub repos or to get a copy of my resume. 
         </p>
-        <p>-CAL</p>
-
+        
       </div>
     </Layout>
   );
