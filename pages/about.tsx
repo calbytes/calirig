@@ -13,17 +13,18 @@ export default function About(): JSX.Element {
 
           <div>
             <br/>
-            <h3>CaliRig</h3>
+            <h3>About Me</h3>
           </div>
         </div>
 
         <p className="lead mb-3">
-          hey hi hello,
+          Hello!
           <br/>
-          i'm Carlos, a software engineer in NYC. i previously worked in an in-house cybersecurity org building access controls (I&AM) 
-          & I also designed and developed manufacturing solutions w IoT devices in the early stages of a startup.
+          I'm a software engineer with a background in cybersecurity (I&AM) and IoT devices within the manufacturing industry. 
+          I spend much of my time working with open source projects and hardware components; mostly in Python, C++, and Java environments.
+          I'm based in NYC and when I'm not working on my projects, I'm probably cycling, reading, or cooking.
           <br/>
-          Shoot me a msg to get access to my GitHub repos or to get a copy of my resume. 
+           - CAL
         </p>
         
       </div>
