@@ -18,13 +18,14 @@ export default function About(): JSX.Element {
         </div>
 
         <p className="lead mb-3">
-          Hello!
+          Hey Hi Hello!
           <br/>
-          I'm a software engineer with a background in cybersecurity (I&AM) and IoT devices within the manufacturing industry. 
-          I spend much of my time working with open source projects and hardware components; mostly in Python, C++, and Java environments.
-          I'm based in NYC and when I'm not working on my projects, I'm probably cycling, reading, or cooking.
+          I'm a full-stack Software Engineer with a background in Cybersecurity (I&AM) and IoT Devices.
+          I'm currently at a startup building Learning Management Systems (LMS) by leveraging LLMs. 
+          I'm based in NYC and when I'm not working, I'm probably cycling, reading, or cooking.
+          Feel free to contact me if you have any questions.
           <br/>
-           - CAL
+           - Carlos
         </p>
         
       </div>
